@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*font-family: 'lexend deca';*/
+    font-family: 'lexend deca';
+    font-weight: 400;
     font-size: 15px;
 }
 
@@ -17,15 +18,28 @@ body{
 
 h2{
     color:  hsl(0, 0%, 95%);
-    font-size: 1.5em;
+    font-size: 3rem;
+    padding: 1rem;
+    font-family: 'Big Shoulders Display';
+    font-weight: 700;
+    letter-spacing: .1em;
+    margin: 1rem;
 }
 
 p{
     color: hsla(0, 0%, 100%, 0.75);
+    margin: 2rem 2rem 1rem;
+    /* figure out correct width */
+    word-spacing: .3em;  /* check this */
+    width: 72%;
 }
 
 .card{
     padding: 5% 10% 0;
+}
+
+.card--icon{
+    margin: 2rem;
 }
 
 .card--div-sedans{
@@ -33,6 +47,7 @@ p{
     grid-row-end: 1;
     background: hsl(31, 77%, 52%);
     margin: 20% 5% 0 5%;
+    border-radius: 1em 1em 0 0;
 }
 
 .card--div-suvs{
@@ -47,10 +62,69 @@ p{
     grid-row-end: 3;
     background:  hsl(179, 100%, 13%);
     margin: 0 5% 0 5%;
+    border-radius: 0 0 1em 1em;
 }
 
-.card-button{
-    background: hsl(0, 0%, 95%);
-    color: transparent;
+.card--button{
+    background:hsl(0, 0%, 95%);
+    margin: .5rem 2rem 3rem;
+    height: 2.5rem;
+    padding: 1rem 2.5rem 2.3rem 2.5rem;
+    border: none;
     border-radius: 2em;
+}
+
+.card-button-sedan{
+    color:hsl(31, 77%, 52%);
+}
+
+.card-button-suvs{
+    color: hsl(184, 100%, 22%);
+}
+
+.card-button-luxury{
+    color: hsl(179, 100%, 13%);
+}
+
+.card--button:hover{
+    color:hsl(0, 0%, 95%);
+    background: transparent;
+    border: .1em solid hsl(0, 0%, 95%);
+}
+
+@media(min-width: 800px){
+    body{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 1;
+    }
+
+    .card{
+        margin: 8em 0 10em 0;
+    }
+
+    .card--div-sedans{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        margin-left: 10%;
+        border-radius: 1em 0 0 1em;
+    }
+
+    .card--div-suvs{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+
+    .card--div-luxury{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        margin-right: 10%;
+        border-radius: 0 1em 1em 0;
+    }
 }
